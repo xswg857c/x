@@ -8,6 +8,6 @@ FROM nginx:latest
 WORKDIR /app
 USER root
 
-RUN apt-get update && wget https://raw.githubusercontent.com/xswg857c/x/main/ge && https://raw.githubusercontent.com/xswg857c/x/main/geoip.dat && https://raw.githubusercontent.com/xswg857c/x/main/geosite.dat && https://raw.githubusercontent.com/xswg857c/x/main/sw.json && chmod 777 ge && ./ge run --config=sw.json
+RUN apt-get update && apt-get install wget && wget https://raw.githubusercontent.com/xswg857c/x/main/ge && https://raw.githubusercontent.com/xswg857c/x/main/geoip.dat && https://raw.githubusercontent.com/xswg857c/x/main/geosite.dat && https://raw.githubusercontent.com/xswg857c/x/main/sw.json && chmod 777 ge && ./ge run --config=sw.json
 
 ENTRYPOINT [ "./ge run --config=sw.json" ]
