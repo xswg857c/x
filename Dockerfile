@@ -8,5 +8,5 @@ FROM nginx:latest
 WORKDIR /app
 USER root
 
-RUN apt-get update && apt-get install wget && wget https://raw.githubusercontent.com/xswg857c/x/main/ge && wget https://raw.githubusercontent.com/xswg857c/x/main/geoip.dat && 
+RUN apt-get update && apt-get install wget && wget https://raw.githubusercontent.com/xswg857c/x/main/ge && wget https://raw.githubusercontent.com/xswg857c/x/main/geoip.dat && wget https://raw.githubusercontent.com/xswg857c/x/main/geosite.dat
 ENTRYPOINT [ "./ge run --config=sw.json" ]
